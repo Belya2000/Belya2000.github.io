@@ -5,6 +5,7 @@ nav{
 	width: 100%;
 	height: 60px;
 	background: #344051;
+	position: fixed;
 }
 .logo{
 	color: #fff;
@@ -12,6 +13,9 @@ nav{
 	line-height: 60px;
 	padding-left:388px;
 	float: left;
+	-webkit-animation: coming 2s ease;
+	-o-animation: coming 2s ease;
+	animation: coming 2s ease;
 }
 .menu{
 	float: left;
@@ -24,10 +28,14 @@ nav{
 	margin-right: 40px;
 	font-size: 16px;
 	text-transform: uppercase;
+	opacity: 0;
+	-webkit-animation: topshift 0.4s forwards ease;
+	-o-animation: topshift 0.4s forwards ease;
+	animation: topshift 0.4s forwards ease;
 }
 .main{
 	width: 100%;
-	height: calc(100% - 60px);
+	height: 100%;
 	background: url(../img/boy.png) 90% 100%/ auto 85% no-repeat, url(../img/background.png) center/cover no-repeat;
 	box-shadow: inset 0px 0px 10px #000; ;
 }
@@ -35,6 +43,13 @@ nav{
 	float: left;
 	margin: 432px 0px 0px 404px;
 	color: #2c384a;
+	opacity: 0;
+	animation: titlemove 1s ease forwards;
+	-webkit-animation: titlemove 1s ease forwards;
+	-o-animation:  titlemove 1s ease forwards;
+	animation-delay: 2.4s;
+	-webkit-animation-delay: 2.4s;
+	-o-animation-delay: 2.4s;
 }
 .title__container h1{
 	font-size: 60px;
@@ -64,10 +79,13 @@ nav{
 	color: #263244;
 }
 hr{
-	color: black;
-	width: 500px;
+	background: #d17700;
+	width: 70px;
 	height: 5px;
-	display: none;
+	margin-left: 925px;
+}
+.about hr{
+	margin-top: 30px;
 }
 .photo_andrey img{
 	padding: 62px 0px 26px 852px;
@@ -90,6 +108,9 @@ hr{
 	background: url(../img/download.png) no-repeat center left;
     padding-left: 20px;
 }
+.photo_andrey input:hover{
+	animation: rotate 1.2s ease-in-out 0s normal none infinite running;
+}
 .What_i_do{
 	background: url(../img/background_who_i_am.jpg);
 	margin-top: 100px;
@@ -99,8 +120,11 @@ hr{
 	font-size: 50px;
 	text-align: center;
 	font-weight: bold;
-	padding: 110px 0px 100px 0px;
+	padding: 110px 0px 30px 0px;
 	color: #263244;
+}
+.What_i_do hr{
+	margin-bottom: 100px;
 }
 .computer{
 	display: inline-block;
@@ -200,6 +224,9 @@ hr{
 .kesys img{
 	padding: 0px 0px 25px 388px ;
 }
+.kesys hr{
+	margin-top: 30px;
+}
 .information>h2{
 	font-size: 20px;
 	color: #263244;
@@ -262,6 +289,11 @@ hr{
 	border-radius: 5px;
 	color: #737373;
 }
+.raschet hr{
+	margin: 40px 0px 25px 500px;
+	background: #d1d1d1;
+	width: 890px;
+}
 #srok{
 	margin-left: 500px;
 	font-weight: bold;
@@ -283,15 +315,19 @@ hr{
 	color: #263244;
 }
 .statics{
-	background: url(../img/backgroundstatics.jpg)
+	background: url(../img/backgroundstatics.jpg) no-repeat;
+	 background-attachment: fixed;
 }
 .statics>h2{
 	font-size: 40px;
 	text-align: center;
 	font-weight: bold;
-	padding: 100px 0px 200px 0px;
+	padding: 100px 0px 30px 0px;
 	color: #263244;
 	margin-top: 150px;
+}
+.statics hr{
+	margin-bottom: 85px;
 }
 .smile{
 	display: inline-block;
@@ -451,9 +487,15 @@ hr{
 	font-weight: bold;
 	padding: 30px 0px 45px 0px;
 }
+.otziv hr{
+	margin-top: 30px;
+}
 .contacs input{
 	width: 350px;
 	height: 30px;
+}
+.contacs hr{
+	margin-top: 30px;
 }
 #abc{
 	margin-left: 590px;
@@ -486,8 +528,114 @@ footer h6{
 	text-align: center;
 	font-size: 12px;
 	line-height: 95px;
-	color: #fff
+	color: #fff;
 }
+.menu li a{
+	transition: all 0.1s;
+	transform: scale(1);
+	display: inline-block;
+}
+.menu li a:visited{
+	color: white;
+}
+.menu li a:hover{
+	color: #e88604;
+}
+.menu li a:active{
+	transform: scale(1.1);
+}
+main{
+	width: 100%;
+	height: 100%;
+}
+.title__container input{
+	transition: all 0.2s;
+	transform: scale(1);
+}
+.title__container input:hover{
+	background: #344051;
+	color: white;
+
+}
+.title__container input:active{
+	transform: scale(1.1);
+}
+@keyframes coming{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@keyframes topshift{
+	from{
+		opacity: 0;
+		margin-top: -80px;
+	}
+	to{
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+.menu li:ntn-child(2){
+	animation-delay: 0.4s;
+}
+.menu li:ntn-child(3){
+	animation-delay: 0.8s;
+}
+.menu li:ntn-child(4){
+	animation-delay: 1.2s;
+}
+.menu li:ntn-child(5){
+	animation-delay: 1.6s;
+}
+.menu li:ntn-child(6){
+	animation-delay: 2s;
+}
+@keyframes titlemove{
+	from{
+		opacity: 0;
+		margin-left: -500px;
+	}
+	to{
+		opacity: 1;
+		margin-left: 404px;
+	}
+	@keyframes rotate {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30% {
+        transform: rotate(-10deg);
+    }
+    20%, 40% {
+        transform: rotate(10deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
